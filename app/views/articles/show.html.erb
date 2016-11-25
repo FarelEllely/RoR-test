@@ -15,6 +15,13 @@
   <%= @article.image %>
 </p>
 
+<p>
+  <strong>Category:</strong>
+  <%= @article.category.name %>
+</p>
+
+<small>Published at <%= @article.created_at %> </small>
+
 <h2>Comments</h2>
 <%= render @article.comments %>
 
