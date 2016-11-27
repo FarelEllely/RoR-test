@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_filter :require_permission, only: [:edit, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -10,6 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @owner = Article.find(params[:id]).user
   end
 
   # GET /articles/new
@@ -59,6 +61,12 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def require_permission
+    if current_user != @owner
+      redirect_to root_path
     end
   end
 
