@@ -10,23 +10,28 @@
 
   <body>
 
-
+  <div class="navbar">
+    <div class="menu">
       <ul>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'News', articles_path %>
-        <%= link_to 'About', about_path %>
-        <%= link_to 'Contact', contact_path %>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'News', articles_path %></li>
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Contact', contact_path %></li>
       </ul>
+    </div>
   
+    <div class="auth">
       <ul>
         <% if user_signed_in? %>
-            <%= current_user.email %>
-            <%= link_to 'log out', destroy_user_session_path, :method => :delete %>
+            <li><%= current_user.email %></li>
+            <li><%= link_to 'log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
-            <%= link_to 'log in', new_user_session_path %>
-            <%= link_to 'Sign Up', new_user_registration_path %>
+            <li><%= link_to 'log in', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
         <% end %>
       </ul>
+    </div>
+  </div>
 
      
         <p class="notice"><%= notice %></p>
