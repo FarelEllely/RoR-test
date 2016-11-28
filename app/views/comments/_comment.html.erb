@@ -1,6 +1,6 @@
 <p>
   <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <%= comment.user.email %>
 </p>
  
 <p>
@@ -8,8 +8,10 @@
   <%= comment.body %>
 </p>
 
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<% if user_signed_in? and comment.user_id == current_user.id %>
+	<p>
+	  <%= link_to 'Delete Comment', [comment.article, comment],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>

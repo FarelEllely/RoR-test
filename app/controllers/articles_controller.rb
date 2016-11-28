@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @owner = Article.find(params[:id]).user
+    @message = "* Subscribe with us and Leave us your comment"
   end
 
   # GET /articles/new

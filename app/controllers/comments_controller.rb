@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
@@ -25,7 +26,10 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
+    @comment = @article.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    @comment.save()
+
     redirect_to article_path(@article)
   end
 
@@ -60,6 +64,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:commenter, :body, :article_id)
+      params.require(:comment).permit(:body, :article_id, :user_id)
     end
 end
