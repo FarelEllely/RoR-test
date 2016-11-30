@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_filter :require_permission, only: [:edit, :destroy]
+  # before_filter :require_permission, only: [:edit, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -65,11 +65,11 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def require_permission
-    if current_user != @owner
-      redirect_to root_path
-    end
-  end
+  # def require_permission
+  #   if current_user != @owner
+  #     redirect_to root_path
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

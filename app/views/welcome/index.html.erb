@@ -18,7 +18,7 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
-        <td><%= article.image %></td>
+        <td><%= image_tag article.image.url(:thumb)%></td>
         <td><%= link_to 'Read more', article %></td>
       </tr>
     <% end %>

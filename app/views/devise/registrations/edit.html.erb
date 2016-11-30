@@ -29,6 +29,10 @@
     <%= f.input :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.input :image, :label => "Profile picture", as: :file %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

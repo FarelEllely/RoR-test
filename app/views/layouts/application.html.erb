@@ -19,11 +19,11 @@
         <li><%= link_to 'Contact', contact_path %></li>
       </ul>
     </div>
-  
+
     <div class="auth">
       <ul>
         <% if user_signed_in? %>
-            <li><%= current_user.email %></li>
+            <li><%= link_to current_user.email, edit_user_registration_path  %></li>
             <li><%= link_to 'log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
             <li><%= link_to 'log in', new_user_session_path %></li>
@@ -33,11 +33,11 @@
     </div>
   </div>
 
-     
+
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-     
-    
+
+
 
   <div class="container">
   		<%= yield %>
