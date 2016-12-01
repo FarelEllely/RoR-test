@@ -36,7 +36,8 @@
   </p>
 <% end %>
 
-<% if user_signed_in? and current_user == @owner %>
+<%# if user_signed_in? and current_user == @owner %>
+<% if can? :edit, :destroy, @article %>
   <%= link_to 'Edit', edit_article_path(@article) %> |
   <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>

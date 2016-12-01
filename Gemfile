@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'simple_form'
+gem 'cancancan', '~> 1.10'
 
 
 # Use Capistrano for deployment

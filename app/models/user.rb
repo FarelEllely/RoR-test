@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  def admin?
+    role == "admin"
+  end
 end

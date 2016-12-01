@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:category]
-      @articles = Article.where(:category => params[:category])
+      @articles = Article.where(:category => params[:category]).order("created_at DESC")
       if @articles.empty?
         flash[:notice]
       end
@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    authorize! :create, @article
   end
 
   # GET /articles/1/edit
@@ -36,6 +37,7 @@ class ArticlesController < ApplicationController
   def create
     #@article = Article.new(article_params)
     @article = current_user.articles.build(article_params)
+    authorize! :create, @article
 
     respond_to do |format|
       if @article.save
@@ -51,6 +53,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    authorize! :edit, @article
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -65,6 +68,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    authorize! :destroy, @article
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
