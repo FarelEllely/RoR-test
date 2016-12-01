@@ -23,6 +23,10 @@
     <div class="auth">
       <ul>
         <% if user_signed_in? %>
+          <li><%=link_to edit_user_registration_path do %>
+                <%= image_tag current_user.image.url(:thumb) %>
+              <% end %>
+          </li> |
             <li><%= link_to current_user.email, edit_user_registration_path  %></li>
             <li><%= link_to 'log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
@@ -31,6 +35,12 @@
         <% end %>
       </ul>
     </div>
+  </div>
+  <div class="menu_1">
+    <% @category.each do |c| %>
+      <%= link_to c.name, articles_path(:category=>c.id) %>
+    <% end %>
+
   </div>
 
 

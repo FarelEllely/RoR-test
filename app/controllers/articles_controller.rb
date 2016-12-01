@@ -5,7 +5,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:category]
+      @articles = Article.where(:category => params[:category])
+      if @articles.empty?
+        flash[:notice]
+      end
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1

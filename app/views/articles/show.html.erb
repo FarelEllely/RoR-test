@@ -29,7 +29,7 @@
 <%= simple_form_for([@article, @article.comments.build]) do |f| %>
   <%= @message %>
   <p>
-    <%= f.input :body %>
+    <%= f.input :body, :label => "Comment" %>
   </p>
   <p>
     <%= f.button :submit %>
