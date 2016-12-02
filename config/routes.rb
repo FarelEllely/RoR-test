@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  #Route for Admin
+  get '/admin-panel' => 'admin#index'
+
   devise_for :users
+  resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
 
   #Route for landing page
   get 'welcome/index'
@@ -11,6 +21,7 @@ Rails.application.routes.draw do
   resources :articles do
   	resources :comments
   end
+  #Route for like/Unlike button
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
