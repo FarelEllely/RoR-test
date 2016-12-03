@@ -28,10 +28,9 @@
               <% end %>
           </li> |
             <li><%= link_to current_user.email, edit_user_registration_path  %></li>
-            <li><%= link_to 'Messages', conversations_path %></li>
             <% if current_user.admin? %>
-              <li><%= link_to 'Admin Panel', admin_panel_path %></li>
-            <% end %>
+             <li><%= link_to 'Admin Panel', admin_panel_path %></li>
+             <% end %>
             <li><%= link_to 'log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
             <li><%= link_to 'log in', new_user_session_path %></li>
