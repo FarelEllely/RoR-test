@@ -32,6 +32,8 @@ gem 'simple_form'
 gem 'cancancan', '~> 1.10'
 gem 'mailboxer'
 
+gem 'will_paginate', '~> 3.1.0'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

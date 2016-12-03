@@ -17,10 +17,10 @@ class User < ApplicationRecord
   end
 
   def name
-    return User.username
+    username
   end
 
   def mailboxer_email(object)
-    return User.email
+    email
   end
 end

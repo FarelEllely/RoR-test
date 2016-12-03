@@ -1,0 +1,19 @@
+<%= simple_form_for :conversation, url: :conversations do |f| %>
+
+  <div class="field">
+    <%= f.input :recipients %>
+  </div>
+
+  <div class="field">
+    <%= f.input :subject %>
+  </div>
+
+  <div class="field">
+    <%= f.input :body, as: :text %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+    <%#= f.button :submit, 'Cancel', type: :reset, class: 'btn-danger' %>
+  </div>
+<% end %>
