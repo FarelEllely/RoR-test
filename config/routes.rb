@@ -4,23 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  #Routes for Mailboxer
-  resources :conversations, only: [:index, :show, :new, :create] do
-    member do
-      post :reply
-      post :restore
-      post :mark_as_read
-    end
-  end
-  resources :conversations, only: [:index, :show, :destroy] do
-    collection do
-      delete :empty_trash
-    end
-  end
-
-  #Routes for Messages
-  resources :messages, only: [:new, :create]
-  resources :users, only: [:index]
+  
 
   #Route for landing page
   get 'welcome/index'
