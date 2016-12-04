@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'conversations/index'
+
   #Route for Admin
   get '/admin-panel' => 'admin#index'
 
   devise_for :users
 
-  
+  resources :conversations, only: [:index, :create, :new]
 
   #Route for landing page
   get 'welcome/index'

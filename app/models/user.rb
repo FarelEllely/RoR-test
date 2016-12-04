@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_one :like, through: :article
+  has_many :conversations, dependent: :destroy
 
   def admin?
     role == "admin"
