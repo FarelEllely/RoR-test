@@ -29,6 +29,7 @@ gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'simple_form'
 gem 'cancancan', '~> 1.10'
+gem 'redis', '~> 3.2'
 # gem 'mailboxer'
 
 gem 'will_paginate', '~> 3.1.0'
