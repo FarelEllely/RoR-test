@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
-  
+
   get 'conversations/index'
 
   #Route for Admin
@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  #Routes for conversations
   resources :conversations, only: [:index, :create, :new, :show]
+
+  #Routes for messages
+  # resources :messages
 
   #Route for landing page
   get 'welcome/index'
