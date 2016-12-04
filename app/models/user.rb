@@ -10,8 +10,13 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :conversations, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   def admin?
     role == "admin"
+  end
+
+  def name
+    email.split('@')[0]
   end
 end

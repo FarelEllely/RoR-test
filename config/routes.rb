@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :conversations, only: [:index, :create, :new]
+  resources :conversations, only: [:index, :create, :new, :show]
 
   #Route for landing page
   get 'welcome/index'
