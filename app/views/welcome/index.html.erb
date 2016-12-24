@@ -18,7 +18,7 @@
            <% if i == 0 %>
             <%= image_tag article.image.url %>
             <div class="carousel-caption">
-              <h4><%= link_to article.title, article %></h4>
+              <h1><%= link_to article.title, article %></h1>
             </div>
             <% end %>
           <% end %>
@@ -28,7 +28,7 @@
              <%= link_to article do %>
                 <%= image_tag article.image.url %>
                 <div class="carousel-caption">
-                  <h4><%= article.title %></h4>
+                  <h1><%= article.title %></h1>
                 </div>
              <% end %>
            </div>
