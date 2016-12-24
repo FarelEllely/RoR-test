@@ -1,1 +1,15 @@
 <h1>Admin Panel</h1>
+
+<ol>
+    <% @users.each do |user| %>
+      <% if user.admin? %>
+      <h3> Administrator(s) </h3>
+        <li><%= user.email %></li>
+</ol>
+<ol>
+      <% else %>
+        <h3> User(s) </h3>
+        <li><%= user.email %>
+      <% end %>
+    <% end %>
+</ol>
