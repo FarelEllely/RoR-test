@@ -34,7 +34,7 @@
                   <%= image_tag current_user.image.url(:thumb) %>
                 <% end %>
             </li> |
-              <li><%= link_to current_user.email, edit_user_registration_path  %></li>
+              <li class="nav item-dropdown"><%= link_to current_user.email, edit_user_registration_path  %></li>
             <%#= link_to 'Forum', conversations_path %>
               <% if current_user.admin? %>
                <li><%= link_to 'Admin Panel', admin_panel_path %></li>
@@ -65,17 +65,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
+        <div class="wrapper">
   		    <%= yield %>
         </div>
+      </div>
 
 
 
         <div class="col-md-4">
           <div class="Ads">
-            <div>
-        </div>
+            
+          </div>
       </div>
-  </div>
 
   </body>
 </html>
