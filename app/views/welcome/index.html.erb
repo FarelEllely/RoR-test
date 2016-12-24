@@ -1,7 +1,7 @@
 
           <% @articles.each do |article| %>
               <h2><%= article.title %></h2>
-              <%= image_tag article.image.url(:thumb)%></td>
+              <%= image_tag article.image.url(:medium)%></td>
               <p><%= truncate(article.content, length: 200) %></p>
               <%= link_to 'Read more', article %>
           <% end %>

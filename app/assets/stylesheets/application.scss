@@ -1,3 +1,63 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 // @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar{
+  background-color: #f2f2f2;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}
+
+a:hover, a:visited, a:link, a:active{
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu ul {
+  padding: 5px;
+}
+
+.menu ul li{
+  display: inline-block;
+  font-size: 17px;
+  margin: 5px;
+}
+
+.auth {
+  width: 100%;
+  padding-right: 0;
+}
+
+.auth ul {
+  padding: 5px;
+}
+
+.auth ul li{
+  display: inline-block;
+  font-size: 17px;
+  margin: 5px;
+}
+
+.menu_1{
+  background-color: #b3b3b3;
+  width: 100%;
+}
+
+.menu_1 li{
+  display: inline-block;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.menu_1 li:hover{
+  background-color: #d9d9d9;
+}
