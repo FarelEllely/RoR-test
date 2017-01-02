@@ -1,55 +1,52 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="page-header">
+      <h3><%= @article.title %><small> | by <%= @article.author %></small></h3>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+    <%= image_tag @article.image.url(), class: "featuredImg", width: "100%"%>
+			<hr>
 
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
+    <p>
+      <%= @article.content %>
+    </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @article.image.url(:medium) %>
-</p>
+    <p>
+      <strong> Tag : <%= @article.category.name %> </strong>
+    </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @article.category.name %>
-</p>
-
-<p><%= @article.author %></p>
-
-<small>Published at <%= @article.created_at %> </small>
-<br><br>
-
-<% count = @article.comments.count %>
-<% if count >= 2 %>
-  <p><%= count %> comments</p>
-<% else %>
-  <p><%= count %> comment</p>
-<% end %>
+    <small>Published on <%= @article.created_at.strftime("%B %d, %Y") %> </small>
+    <hr>
 
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+    <% count = @article.comments.count %>
+    <% if count >= 2 %>
+      <p><%= count %> comments</p>
+    <% else %>
+      <p><%= count %> comment</p>
+    <% end %>
 
-<h2>Add a comment:</h2>
-<%= simple_form_for([@article, @article.comments.build]) do |f| %>
-  <%= @message %>
-  <p>
-    <%= f.input :body, :label => "Comment" %>
-  </p>
-  <p>
-    <%= f.button :submit %>
-  </p>
-<% end %>
 
-<%# if user_signed_in? and current_user == @owner %>
-<% if can? :edit, :destroy, @article %>
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<% end %>
-<%= link_to 'Back', articles_path %>
+    <h2>Comments</h2>
+    <div class="commentBox">
+      <%= render @article.comments %>
+      <%= simple_form_for([@article, @article.comments.build]) do |f| %>
+        <%= @message %>
+        <p>
+          <%= f.input :body, :label => "Comment" %>
+        </p>
+        <p>
+          <%= f.button :submit %>
+        </p>
+      <% end %>
+
+      <%# if user_signed_in? and current_user == @owner %>
+      <% if can? :edit, :destroy, @article %>
+        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <% end %>
+      <%= link_to 'Back', articles_path %>
+  </div>
+
+</div>

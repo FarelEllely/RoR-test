@@ -1,11 +1,26 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 // @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic);
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
 
 .navbar{
   background-color: #f2f2f2;
   width: 100%;
   margin-bottom: 0;
+}
+
+.navbar{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
 }
 
 .row{
@@ -16,35 +31,12 @@
 a:hover, a:visited, a:link, a:active{
   text-decoration: none;
   color: inherit;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.menu {
-  width: 100%;
-}
-
-.menu ul {
-  padding: 5px;
-}
-
-.menu ul li{
-  display: inline-block;
+p{
   font-size: 17px;
-  margin: 5px;
-}
-
-.auth {
-  width: 100%;
-  padding-right: 0;
-}
-
-.auth ul {
-  padding: 5px;
-}
-
-.auth ul li{
-  display: inline-block;
-  font-size: 17px;
-  margin: 5px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .menu_1{
@@ -113,6 +105,13 @@ a:hover, a:visited, a:link, a:active{
 
 /* laptops */
 @media (max-width: 1023px) and (min-width: 992px) {
+
+    .navbar{
+      padding: 25px;
+      border-radius: 0;
+      color: #534949;
+      font-size: 20px;
+    }
     .carousel{
       max-height: 350px;
     }
@@ -120,7 +119,17 @@ a:hover, a:visited, a:link, a:active{
 
 /* desktops */
 @media (min-width: 1024px) {
+    .navbar{
+      padding: 25px;
+      border-radius: 0;
+      color: #534949;
+      font-size: 20px;
+    }
     .carousel{
       max-height: 350px;
     }
+}
+
+textarea{
+  resize: none;
 }

@@ -12,10 +12,10 @@
     <p><%= comment.body %></p>
   </div>
   <% if user_signed_in? and comment.user_id == current_user.id %>
-	<p>
+	<li>
 	  <%= link_to 'Delete Comment', [comment.article, comment],
 	               method: :delete,
-	               data: { confirm: 'Are you sure?' } %>
-	</p>
+	               data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+	</li>
 <% end %>
 </div>
