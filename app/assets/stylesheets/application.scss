@@ -83,15 +83,44 @@ a:hover, a:visited, a:link, a:active{
 }
 
 .carousel-caption{
-  top: 50%;
   transform: translateY(-50%);
-  bottom: initial;
   background: rgba(0, 0, 0, 0.7);
   padding: 3px;
-  border-radius: 5px;
 
 }
 
 .carousel-caption h1{
   color: inherit;
+}
+
+.carousel-inner{
+
+}
+
+/* Mobile */
+@media (max-width: 765px) {
+    .carousel{
+
+    }
+}
+
+/* tablets */
+@media (max-width: 991px) and (min-width: 766px) {
+    .carousel{
+
+    }
+}
+
+/* laptops */
+@media (max-width: 1023px) and (min-width: 992px) {
+    .carousel{
+      max-height: 350px;
+    }
+}
+
+/* desktops */
+@media (min-width: 1024px) {
+    .carousel{
+      max-height: 350px;
+    }
 }

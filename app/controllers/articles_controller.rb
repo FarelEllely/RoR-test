@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
         flash[:notice]
       end
     else
+      @message = "All The News "
       @articles = Article.all.order("created_at DESC")
     end
   end
