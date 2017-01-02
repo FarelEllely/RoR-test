@@ -19,6 +19,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    if params[:id]
+      current_article = Article.find(params[:id])
+      @categories = Article.where(:category => current_article.category_id).order("created_at DESC")
+    end
     @owner = Article.find(params[:id]).user
     @message = "* Subscribe with us and Leave us your comment"
   end

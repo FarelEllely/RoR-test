@@ -3,13 +3,12 @@
 <h1><%= @message %> </h1>
 
     <% @articles.each do |article| %>
-        <h1><%= article.title %></h1>
-        <%= image_tag article.image.url(:thumb) %>
+        <h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
         <p><%= truncate(article.content, length: 200) %></p>
         <%= link_to 'Read more', article %>
     <% end %>
 
 <br><br>
 <% if user_signed_in? and can? :create, @article %>
-    <%= link_to 'New Article', new_article_path, class: "btn btn-success" %>
+    <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
 <% end %>

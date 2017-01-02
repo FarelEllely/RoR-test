@@ -44,9 +44,32 @@
       <%# if user_signed_in? and current_user == @owner %>
       <% if can? :edit, :destroy, @article %>
         <%= link_to 'Edit', edit_article_path(@article) %> |
-        <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-      <%= link_to 'Back', articles_path %>
+      <%#= link_to 'Back', articles_path %>
   </div>
 
+  <hr>
+
+  <h3> Recent Posts </h3>
+
+  </div>
+
+
+  <div class="row">
+
+    <% @categories.each do |recent| %>
+    <div class = "col-sm-6 col-md-3">
+       <div class = "thumbnail">
+          <%= link_to recent do %>
+            <%= image_tag recent.image.url() %>
+          <% end %>
+       </div>
+
+       <div class = "caption">
+          <h4><%= link_to recent.title, recent %></h4>
+        </div>
+      </div>
+      <% end %>
+    </div>
 </div>

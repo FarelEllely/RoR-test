@@ -5,6 +5,7 @@
       <% if user.admin? %>
       <h3> Administrator(s) </h3>
         <li><%= user.email %></li>
+        <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
 </ol>
 <ol>
       <% else %>
