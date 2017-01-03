@@ -9,13 +9,18 @@ html {
 
 .navbar{
   background-color: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
   width: 100%;
   margin-bottom: 0;
 }
 
-.navbar{
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
+.navbar li {
+  border-bottom: 3px solid #f2f2f2;
+}
+
+.navbar li:hover{
+  border-bottom: 3px solid #b3b3b3;
 }
 
 h1, h2, h3, h4, h5{
@@ -74,6 +79,10 @@ p{
   transform-style: preserve-3d;
 }
 
+.carousel-inner > .item > img {
+  width: 100%;
+}
+
 .carousel-caption{
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.7);
@@ -85,21 +94,17 @@ p{
   color: inherit;
 }
 
-.carousel-inner{
-
-}
-
 /* Mobile */
 @media (max-width: 765px) {
-    .carousel{
-
+    .carousel-inner{
+      max-height: 100px;
     }
 }
 
 /* tablets */
 @media (max-width: 991px) and (min-width: 766px) {
-    .carousel{
-
+    .carousel-inner{
+      max-height: 350px;
     }
 }
 
@@ -112,7 +117,7 @@ p{
       color: #534949;
       font-size: 20px;
     }
-    .carousel{
+    .carousel-inner{
       max-height: 350px;
     }
 }
@@ -125,7 +130,7 @@ p{
       color: #534949;
       font-size: 20px;
     }
-    .carousel{
+    .carousel-inner{
       max-height: 350px;
     }
 }
