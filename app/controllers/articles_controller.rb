@@ -20,10 +20,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     if params[:id]
-      current_article = Article.find(params[:id])
+      current_article = Article.friendly.find(params[:id])
       @categories = Article.where(:category => current_article.category_id).all_except(current_article).limit(4)
     end
-    @owner = Article.find(params[:id]).user
+    @owner = Article.friendly.find(params[:id]).user
     @message = "* Subscribe with us and Leave us your comment"
   end
 
@@ -90,7 +90,7 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

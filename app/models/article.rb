@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+	extend FriendlyId
+	friendly_id :title, use: :slugged
 	has_many :comments
 	has_many :likes
 	validates :title, presence: true,
@@ -11,5 +13,9 @@ class Article < ApplicationRecord
 
 	def self.all_except(article)
 		where.not(id: article)
+	end
+
+	def should_generate_new_friendly_id?
+		name_changed?
 	end
 end
