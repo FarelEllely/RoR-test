@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-
+    @message = "Latests News"
+    @others = "Recents"
     #Display the most 3 recents articles
   	@articles = Article.all.order("created_at DESC").limit(3)
     #Display others news from each categories in thumbnails fashion

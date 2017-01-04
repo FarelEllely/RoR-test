@@ -31,6 +31,7 @@
     <h2>Comments</h2>
     <div class="commentBox">
       <%= render @article.comments %>
+      <% if user_signed_in? %>
       <%= simple_form_for([@article, @article.comments.build]) do |f| %>
         <%= @message %>
         <p>
@@ -39,6 +40,7 @@
         <p>
           <%= f.button :submit %>
         </p>
+        <% end %>
       <% end %>
 
       <%# if user_signed_in? and current_user == @owner %>

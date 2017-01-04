@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @message %> </h1>
+<hr>
 
     <% @articles.each do |article| %>
-        <h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
+        <%= image_tag article.image.url(:medium) %><h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
         <p><%= truncate(article.content, length: 200) %></p>
-        <%= link_to 'Read more', article %>
+        <%= link_to 'Read more', article, class: "btn btn-primary" %>
+        <hr>
     <% end %>
 
 <br><br>

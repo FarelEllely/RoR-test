@@ -7,11 +7,12 @@ class ArticlesController < ApplicationController
   def index
     if params[:category]
       @articles = Article.where(:category => params[:category]).order("created_at DESC")
+      @message = ""
       if @articles.empty?
         flash[:notice]
       end
     else
-      @message = "All The News "
+      @message = "News "
       @articles = Article.all.order("created_at DESC")
     end
   end
