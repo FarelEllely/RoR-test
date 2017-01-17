@@ -4,7 +4,9 @@
 <hr>
 
     <% @articles.each do |article| %>
-        <%= image_tag article.image.url(:medium) %><h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
+      <div class="img">
+        <%= image_tag article.image.url() %></div>
+        <h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
         <p><%= truncate(article.content, length: 200) %></p>
         <%= link_to 'Read more', article, class: "btn btn-primary" %>
         <hr>

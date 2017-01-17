@@ -1,16 +1,34 @@
 <h1>Admin Panel</h1>
 
-<ol>
+<h3>Users</h3>
+
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Status</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @users.each do |user| %>
-      <% if user.admin? %>
-      <h3> Administrator(s) </h3>
-        <li><%= user.email %></li>
-        <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
-</ol>
-<ol>
-      <% else %>
-        <h3> User(s) </h3>
-        <li><%= user.email %>
-      <% end %>
+      <tr class="bg-success">
+        <% if user.admin? %>
+          <th scope="row"></th>
+          <td><%= user.email %></td>
+          <td><%= user.username %></td>
+          <td>Admin</td>
+          <td><%= link_to 'Destroy', registration_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <th scope="row"></th>
+          <td><%= user.email %></td>
+          <td><%= user.username %></td>
+          <td>Regular</td>
+          <td>Delete</td>
+        <% end %>
+      </tr>
     <% end %>
-</ol>
+  </tbody>
+</table>

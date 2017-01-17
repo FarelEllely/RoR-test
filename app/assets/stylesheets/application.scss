@@ -44,19 +44,20 @@ p{
   font-family: 'Open Sans', sans-serif;
 }
 
-.menu_1{
-  background-color: #b3b3b3;
+.categories{
+  background-color:inherit;
   width: 100%;
 }
 
-.menu_1 li{
-  display: inline-block;
-  padding: 10px;
+.categories li{
+  display: block;
+  padding: 7px;
   font-size: 15px;
+  text-decoration: none;
 }
 
-.menu_1 li:hover{
-  background-color: #d9d9d9;
+.categories li:hover{
+  background-color: #f2f2f2;
 }
 
 .alert{
@@ -67,10 +68,12 @@ p{
   padding: 10px;
 }
 
-.Ads{
-  margin: 20px;
-  padding:10px;
-  border: 1px solid #f2f2f2;
+.img{
+  width: inherit;
+}
+
+.img > img {
+  width: 100%;
 }
 
 .item{

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 
-  has_many :articles, dependent: :destroy
+  has_many :articles
   has_many :comments, dependent: :destroy
   has_many :conversations, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def full_name
-    
+
   end
 end

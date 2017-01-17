@@ -13,7 +13,7 @@
     </p>
 
     <p>
-      <strong> Tag : <%= @article.category.name %> </strong>
+        Tag :<strong> <%= link_to @article.category.name %> </strong>
     </p>
 
     <small>Published on <%= @article.created_at.strftime("%B %d, %Y") %> </small>
@@ -75,3 +75,5 @@
       <% end %>
     </div>
 </div>
+
+ <%#articles_path(:category=>c.id)%>
