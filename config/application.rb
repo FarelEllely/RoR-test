@@ -16,9 +16,9 @@ module Echo
       :address  => 'smtp.gmail.com',
       :domain   => 'mail.google.com',
       :port     => 587,
-      :user_name=> 'yourname@gmail.com',
-      :password => 'password',
-      :authentication => 'login',
+      :user_name=> 'ellelyf@gmail.com',
+      :password => 'ruthellely',
+      :authentication => 'plain',
       :enable_starttls_auto => true
     }
   end

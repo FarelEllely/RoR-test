@@ -8,14 +8,14 @@
   </div>
 
   <div class="field">
-    <%= f.input :email, autofocus: true %>
+    <%= f.input :email, autofocus: true, autocomplete: 'off' %>
   </div>
 
   <div class="field">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.input :password, autocomplete: "off" %>
+    <%= f.input :password, autocomplete: "off", autofocus: false %>
   </div>
 
   <div class="field">

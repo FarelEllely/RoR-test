@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   #Routes for static pages
   get '/about' => 'welcome#about'
-  get '/contact' => 'welcome#contact'
+
+  get '/contact' => 'contact#index'
+  post "/contact", to: "contact#create"
 
   resources :articles do
   	resources :comments
