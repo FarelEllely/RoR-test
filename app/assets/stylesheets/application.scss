@@ -20,12 +20,21 @@ html {
 }
 
 .navbar li:hover{
-  border-bottom: 3px solid #b3b3b3;
+  border-bottom: 3px solid #70be44;
 }
 
 h1, h2, h3, h4, h5{
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
+}
+
+.navbar-brand > img {
+  width: 100%;
+  height: 90px;
+}
+
+.navbar-toggle .icon-bar{
+  background-color: #70be44;
 }
 
 .row{

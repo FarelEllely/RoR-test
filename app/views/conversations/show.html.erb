@@ -1,0 +1,17 @@
+<h1><%= @conversation.title %></h1>
+
+<div id="messages" data-conversation-id="<%= @conversation.id %>">
+  <%= render @conversation.messages %>
+</div>
+
+<hr>
+
+<%= simple_form_for @message, url: '#' do |f| %>
+  <%= hidden_field_tag 'conversation_id', @conversation.id %>
+  <div class="form-group">
+    <%= f.input :body, class: 'form-control' %>
+    <small class="text-muted">From 2 to 1000 characters</small>
+  </div>
+
+  <%= f.submit "Add Message", class: 'btn btn-primary btn-lg' %>
+<% end %>

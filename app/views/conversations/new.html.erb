@@ -1,0 +1,9 @@
+<h1>Open a conversation</h1>
+
+<%= simple_form_for @conversation do |f| %>
+  <div class="form-group">
+    <%= f.input :title, autofocus: true, class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Open", class: 'btn btn-primary' %>
+<% end %>

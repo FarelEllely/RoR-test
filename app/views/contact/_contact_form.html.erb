@@ -1,0 +1,17 @@
+<%= simple_form_for @contact, url: contact_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.input :first_name, :require => true, placeholder: "First Name" %>
+  </div>
+  <div class="field">
+    <%= f.input :last_name, placeholder: "Last Name" %>
+  </div>
+  <div class="field">
+    <%= f.input :email, :require => true, placeholder: "Your Email" %>
+  </div>
+  <div class="field">
+    <%= f.input :message, :as => :text, placeholder: "Your Message" %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, "Send Message" %>
+  </div>
+<% end %>
