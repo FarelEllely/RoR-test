@@ -52,3 +52,12 @@
       username: godfather
       password:
       timeout: 5000
+
+    production:
+      adapter: postgresql
+      encoding: unicode
+      database: tefecho_production
+      pool: 5
+      username: godfather
+      password:
+      timeout: 5000
