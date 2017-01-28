@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
 
+  resources :categories
+
   get 'conversations/index'
 
   #Route for Admin
   get '/admin-panel' => 'admin#index'
+  post'/admin-panel' => 'admin#create'
+  get '/admin-create' => 'admin#new'
 
   devise_for :users
 

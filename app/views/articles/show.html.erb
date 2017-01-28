@@ -17,14 +17,26 @@
     </p>
 
     <small>Published on <%= @article.created_at.strftime("%B %d, %Y") %> </small>
+    <br><br>
+
+    <div class="stats">
+      <li><p><%= @views %> views <i class="fa fa-eye" aria-hidden="true"></i></p></li>
+      <li>
+        <%= link_to  do %>
+          share <i class="fa fa-share" aria-hidden="true"></i>
+        <% end %>
+      </li>
+    </div>
+
+    <h5><%= @message %></h5>
     <hr>
 
 
     <% count = @article.comments.count %>
     <% if count >= 2 %>
-      <p><%= count %> comments</p>
+      <p><%= count %> comments <i class="fa fa-comments-o" aria-hidden="true"></i></p>
     <% else %>
-      <p><%= count %> comment</p>
+      <p><%= count %> comment <i class="fa fa-comment" aria-hidden="true"></i></p>
     <% end %>
 
 
@@ -38,7 +50,7 @@
           <%= f.input :body, :label => "Comment" %>
         </p>
         <p>
-          <%= f.button :submit %>
+          <%= f.button :submit, "Comment"%>
         </p>
         <% end %>
       <% end %>

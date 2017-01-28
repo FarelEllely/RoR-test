@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def get_category_list
-    @category = Category.all
+    @category = Category.all.limit(5)
   end
 
   def configure_permitted_parameters
