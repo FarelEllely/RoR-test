@@ -38,7 +38,8 @@ gem 'redis', '~> 3.2'
 gem 'will_paginate', '~> 3.1.0'
 gem 'friendly_id', '~> 5.1.0'
 gem 'mail_form'
-
+#Use impressionist
+gem 'impressionist'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

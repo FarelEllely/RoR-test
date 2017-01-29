@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  impressionist :action => :show
   # before_filter :require_permission, only: [:edit, :destroy]
 
   # GET /articles
@@ -23,8 +24,6 @@ class ArticlesController < ApplicationController
   def show
     if params[:id]
       @article = Article.friendly.find(params[:id])
-      @article.views += 1
-      @article.save
       @categories = Article.where(:category => @article.category_id).all_except(@article).limit(4)
     end
     @owner = Article.friendly.find(params[:id]).user
