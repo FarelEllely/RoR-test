@@ -63,6 +63,30 @@ p{
   font-family: 'Open Sans', sans-serif;
 }
 
+.did_you_know{
+  text-align: center;
+  padding: 7px;
+  border: 1px solid #8bc43f;
+  border-radius: 2px;
+}
+
+.most_viewed{
+  background-color: inherit;
+  width: 100%;
+}
+
+.most_viewed li{
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  border: 1px solid #8bc43f;
+  border-radius: 2px;
+}
+
+.most_viewed li:hover{
+  background-color: #f2f2f2;
+}
+
 .categories{
   background-color:inherit;
   width: 100%;
@@ -71,8 +95,10 @@ p{
 .categories li{
   display: block;
   padding: 7px;
-  font-size: 15px;
+  // font-size: 15px;
   text-decoration: none;
+  border: 0.5px solid #8bc43f;
+  border-radius: 2px;
 }
 
 .categories li:hover{

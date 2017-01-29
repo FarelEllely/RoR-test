@@ -4,15 +4,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   # GET /articles.json
-  def increment_views
-    if request.session_options[:id]
-      if session[:counter].nil?
-        session[:counter] = 0
-      else
-        session[:counter] += 1
-      end
-    end
-  end
 
   def index
     if params[:category]
@@ -31,12 +22,13 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     if params[:id]
-      current_article = Article.friendly.find(params[:id])
-      @categories = Article.where(:category => current_article.category_id).all_except(current_article).limit(4)
+      @article = Article.friendly.find(params[:id])
+      @article.views += 1
+      @article.save
+      @categories = Article.where(:category => @article.category_id).all_except(@article).limit(4)
     end
     @owner = Article.friendly.find(params[:id]).user
     @message = "* Subscribe with us and Leave us your comment"
-    @views = increment_views
   end
 
   # GET /articles/new

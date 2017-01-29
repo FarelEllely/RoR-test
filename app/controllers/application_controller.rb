@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   def get_category_list
     @category = Category.all.limit(5)
+    @most_viewed = Article.order('articles.views DESC').limit(3)
   end
 
   def configure_permitted_parameters

@@ -87,7 +87,18 @@
         <div class="col-md-4">
           <h3>Did You Know ?</h3>
           <hr>
-          <br><br>
+          <div class="did_you_know">
+          </div>
+          <br>
+
+          <h3>Most viewed</h3>
+          <hr>
+          <div class="most_viewed">
+            <% @most_viewed.each do |c| %>
+              <li><%= link_to c.title, c %> (<%= c.views %>)</li>
+            <% end %>
+          </div>
+          <br>
 
           <h3>Categories</h3>
           <hr>
@@ -96,7 +107,7 @@
               <li><%= link_to c.name, articles_path(:category=>c.id) %></li>
             <% end %>
           </div>
-          <br><br>
+          <br>
 
           <h3> Find Us on Facebook </h3>
           <hr>
