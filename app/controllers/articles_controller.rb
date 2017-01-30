@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:category]
-      @articles = Article.where(:category => params[:category]).order("created_at DESC")
+      @articles = Article.where(:category => params[:category]).paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
       @message = ""
       if @articles.empty?
         flash[:notice]
