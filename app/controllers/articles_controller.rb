@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
       end
     else
       @message = "News"
-      @articles = Article.paginate(:page => params[:page], :per_page => 1).order("created_at DESC")
+      @articles = Article.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
     end
   end
 
