@@ -36,7 +36,7 @@ gem 'redis', '~> 3.2'
 # gem 'mailboxer'
 
 gem 'will_paginate', '~> 3.1.0'
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id'
 gem 'mail_form'
 #Use impressionist
 gem 'impressionist'

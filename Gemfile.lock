@@ -209,7 +209,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   font-awesome-sass
-  friendly_id (~> 5.1.0)
+  friendly_id
   impressionist
   jbuilder (~> 2.5)
   jquery-rails

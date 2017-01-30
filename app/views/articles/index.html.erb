@@ -8,11 +8,15 @@
         <%= image_tag article.image.url() %></div>
         <h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
         <p><%= truncate(article.content, length: 200) %></p>
-        <%= link_to 'Read more', article, class: "btn btn-primary" %>
+        <%= link_to article do%>
+          Read More <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        <% end %>
         <hr>
     <% end %>
 
 <br><br>
 <% if user_signed_in? and can? :create, @article %>
-    <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
+  <%= link_to new_article_path do %>
+    New Article <i class="fa fa-plus" aria-hidden="true"></i>
+  <% end %>
 <% end %>

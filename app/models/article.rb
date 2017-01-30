@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
 	is_impressionable :counter_cache => true, :column_name => :views, :unique => :request_hash
 	extend FriendlyId
-	friendly_id :title, use: :slugged
+	friendly_id :title
 	has_many :comments
 	has_many :likes
 	validates :title, presence: true,

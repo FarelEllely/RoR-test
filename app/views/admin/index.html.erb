@@ -65,9 +65,11 @@
   </tbody>
 </table>
 <%= link_to admin_create_path do %>
-  Add <i class="fa fa-plus" aria-hidden="true"></i>
+  Add Category <i class="fa fa-plus" aria-hidden="true"></i>
 <% end %>
 <br><br>
 
-<%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
+<%= link_to new_article_path do %>
+  New Article <i class="fa fa-plus" aria-hidden="true"></i>
+<% end %>
 <hr>
