@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5{
   background-color: #70be44;
 }
 
+.alert{
+  text-align: center;
+}
+
 .row{
   margin-right: 0;
   margin-left: 0;
@@ -64,10 +68,10 @@ p{
 }
 
 .did_you_know{
-  text-align: center;
-  padding: 7px;
-  border: 1px solid #8bc43f;
-  border-radius: 2px;
+  // text-align: center;
+  // padding: 7px;
+  // border: 1px solid #8bc43f;
+  // border-radius: 1px;
 }
 
 .most_viewed{
@@ -79,8 +83,8 @@ p{
   display: block;
   padding: 7px;
   text-decoration: none;
-  border: 1px solid #8bc43f;
-  border-radius: 2px;
+  border-bottom: 1px solid #8bc43f;
+  border-radius: 1px;
 }
 
 .most_viewed li:hover{
@@ -97,8 +101,8 @@ p{
   padding: 7px;
   // font-size: 15px;
   text-decoration: none;
-  border: 0.5px solid #8bc43f;
-  border-radius: 2px;
+  border-bottom: 1px solid #8bc43f;
+  border-radius: 1px;
 }
 
 .categories li:hover{
