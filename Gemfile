@@ -35,8 +35,12 @@ gem 'cancancan', '~> 1.10'
 gem 'redis', '~> 3.2'
 # gem 'mailboxer'
 
+#Use for pagination
 gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+# Use for display string in url
 gem 'friendly_id'
+# Mail_form gem
 gem 'mail_form'
 #Use impressionist
 gem 'impressionist'

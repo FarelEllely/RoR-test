@@ -14,8 +14,8 @@ class ArticlesController < ApplicationController
         flash[:notice]
       end
     else
-      @message = "News "
-      @articles = Article.all.order("created_at DESC")
+      @message = "News"
+      @articles = Article.paginate(:page => params[:page], :per_page => 1).order("created_at DESC")
     end
   end
 
