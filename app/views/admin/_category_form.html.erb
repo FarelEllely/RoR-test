@@ -1,0 +1,10 @@
+<%= simple_form_for @Admin_category, url: admin_panel_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.input :name, placeholder: "" %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
