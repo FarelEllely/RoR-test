@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
   def show
     if params[:id]
       @article = Article.friendly.find(params[:id])
+      impressionist(@article)
       @categories = Article.where(:category => @article.category_id).all_except(@article).limit(4)
     end
     @owner = Article.friendly.find(params[:id]).user

@@ -4,13 +4,22 @@
 <hr>
 
     <% @articles.each do |article| %>
-      <div class="img">
-        <%= image_tag article.image.url() %></div>
-        <h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
-        <p><%= truncate(article.content, length: 200) %></p>
-        <%= link_to article do%>
-          Read More <i class="fa fa-arrow-right" aria-hidden="true"></i>
-        <% end %>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="img">
+            <%= image_tag article.image.url() %>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="news">
+            <h1><%= link_to article.title, article %><small> | <%= article.category.name %></small></h1>
+            <p><%= truncate(article.content, length: 100) %></p>
+            <%= link_to article do%>
+              Read More <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
         <hr>
     <% end %>
 
