@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @article = Article.find(params[:article_id])
+    @article = Article.friendly.find(params[:article_id])
     @comment = @article.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment.save()
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @article = Article.find(params[:article_id])
+    @article = Article.friendly.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
     redirect_to article_path(@article)

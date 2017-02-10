@@ -57,6 +57,7 @@
       adapter: postgresql
       encoding: unicode
       database: tefecho_production
+      host: localhost
       pool: 5
       username: godfather
       password:
